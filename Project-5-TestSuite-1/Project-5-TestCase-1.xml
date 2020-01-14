@@ -143,7 +143,7 @@ testRunner.testCase.setPropertyValue("XMLfileLocation", ResponseFileLocation)</s
 	'Set oXSLNode = CreateObject("MSXML2.IXMLDOMNode")'
 	'Set xmlData = CreateObject("MSXML2.IXMLDOMNode")'
 	
-	Set objExcel = CreateObject("Excel.Application")
+    Set objExcel = CreateObject("Excel.Application")
     objExcel.Visible = true
     Set objWorkbook = objExcel.Workbooks.Add()
     Set objWorksheet = objWorkbook.Worksheets(1)
@@ -151,6 +151,7 @@ testRunner.testCase.setPropertyValue("XMLfileLocation", ResponseFileLocation)</s
 	oXML.async = False
     oXML.validateOnParse = False
     oXML.Load"${#TestCase#XMLfileLocation}"
+
 	
 	Set xmlRoot = oXML.DocumentElement
     Set xmlNodes = xmlRoot.FirstChild
