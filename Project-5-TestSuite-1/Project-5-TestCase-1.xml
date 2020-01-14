@@ -52,6 +52,12 @@
         <con:endpoint>http://gateway.marvel.com</con:endpoint>
         <con:request/>
         <con:originalUri>http://gateway.marvel.com/v1/public/characters</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="951b321e-b9a3-4d2e-82ae-f2f401d9a33a" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
         <con:credentials>
           <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
           <con:authType>No Authorization</con:authType>
