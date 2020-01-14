@@ -159,10 +159,11 @@ testRunner.testCase.setPropertyValue("XMLfileLocation", ResponseFileLocation)</s
             iCol = iCol + 1
             objWorksheet.Cells(1, iCol) = xmlData.BaseName
             objWorksheet.Cells(iRow, iCol) = xmlData.Text
+            
         Next 
 		
     Next 
-	
+	objExcel.ActiveWorkbook.Save "C:\test.xls"
 	Wscript.Echo "conversion done"
 Wscript.Quit</FileContent>
       <FolderPath>C:\Users\NikitaChhattani\Desktop\Furloughproject\Marvel</FolderPath>
