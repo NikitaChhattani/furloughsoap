@@ -164,12 +164,15 @@ testRunner.testCase.setPropertyValue("XMLfileLocation", ResponseFileLocation)</s
             iCol = iCol + 1
             objWorksheet.Cells(1, iCol) = xmlData.BaseName
             objWorksheet.Cells(iRow, iCol) = xmlData.Text
-            
         Next 
 		
     Next 
 	
 	Wscript.Echo "conversion done"
+	
+	objWorkbook.SaveAs "C:\Users\NikitaChhattani\Desktop\Furloughproject\Marvel\vbsTest.xlsx"
+	Wscript.Echo "File Saved"
+	
 Wscript.Quit</FileContent>
       <FolderPath>C:\Users\NikitaChhattani\Desktop\Furloughproject\Marvel</FolderPath>
       <Timeout>0</Timeout>
@@ -211,15 +214,15 @@ log.info final_url
   <con:testStep type="delay" name="Delay 3" id="52b267d6-8ffb-4584-be33-782c127da26c">
     <con:settings/>
     <con:config>
-      <delay>1000</delay>
+      <delay>10000</delay>
     </con:config>
   </con:testStep>
-  <con:testStep type="datasource" name="DataSource" id="a3bebef6-c3c3-4236-8cb2-f94267fc88c4">
+  <con:testStep type="datasource" name="DataSource" id="f48a0f69-c908-4286-b90b-7af0894d45cd">
     <con:settings/>
     <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:dataSource type="Excel">
         <con:configuration>
-          <file>C:/Users/NikitaChhattani/Desktop/Furloughproject/Marvel/Book1.xlsx</file>
+          <file>C:/Users/NikitaChhattani/Desktop/Furloughproject/Marvel/vbsTest.xlsx</file>
           <worksheet>Sheet1</worksheet>
           <cell>A1</cell>
           <ignoreEmpty>false</ignoreEmpty>
@@ -228,19 +231,19 @@ log.info final_url
       </con:dataSource>
       <con:shared>true</con:shared>
       <con:restartShared>true</con:restartShared>
-      <con:property>1</con:property>
-      <con:property>2</con:property>
-      <con:property>3</con:property>
-      <con:property>4</con:property>
-      <con:property>5</con:property>
-      <con:property>6</con:property>
-      <con:property>7</con:property>
-      <con:property>8</con:property>
-      <con:property>9</con:property>
-      <con:property>10</con:property>
-      <con:property>11</con:property>
+      <con:property>id</con:property>
+      <con:property>name</con:property>
+      <con:property>description</con:property>
+      <con:property>modified</con:property>
+      <con:property>thumbnail</con:property>
+      <con:property>resourceURI</con:property>
+      <con:property>comics</con:property>
+      <con:property>series</con:property>
+      <con:property>stories</con:property>
+      <con:property>events</con:property>
+      <con:property>urls</con:property>
       <con:startRow>2</con:startRow>
-      <con:endRow/>
+      <con:endRow>2</con:endRow>
       <con:recordsPerIteration>1</con:recordsPerIteration>
       <con:completeLastOperation>true</con:completeLastOperation>
       <con:trimValues>false</con:trimValues>
@@ -252,14 +255,14 @@ log.info final_url
   <con:testStep type="delay" name="Delay 4" id="04134e60-cab8-4cda-bb87-b63b4a719e15">
     <con:settings/>
     <con:config>
-      <delay>1000</delay>
+      <delay>5000</delay>
     </con:config>
   </con:testStep>
   <con:testStep type="groovy" name="FormatURL" id="0f541446-61cb-4dd2-b818-542f852ff310">
     <con:settings/>
     <con:config>
-      <script>def url = context.expand( '${DataSource#11}' )
-String[] arrOfStr = url.split(" ", 6); 
+      <script>def url = context.expand( '${DataSource#urls}' )
+String[] arrOfStr = url.split(" ",3); 
 def ru= arrOfStr[1]
 
 log.info ru
@@ -270,7 +273,7 @@ testRunner.testCase.setPropertyValue("browse_URL", ru)</script>
   <con:testStep type="delay" name="Delay 5" id="abb2229c-9fb7-4714-a64e-58071ab2e6f4">
     <con:settings/>
     <con:config>
-      <delay>1000</delay>
+      <delay>3000</delay>
     </con:config>
   </con:testStep>
   <con:testStep type="CreateAndWaitForRemoveFile" name="VBA-IEBrowseURL" id="55cc007d-a853-40fc-8263-38dcef27eccf">
@@ -942,7 +945,7 @@ log.info final_url
   <con:properties>
     <con:property>
       <con:name>browse_URL</con:name>
-      <con:value>http://marvel.com/comics/characters/1017100/a-bomb_has?utm_campaign=apiRef&amp;utm_source=d88917dfdd9795e7da0217f20a1f3367</con:value>
+      <con:value>http://marvel.com/comics/characters/1009609/spider-girl_may_parker?utm_campaign=apiRef&amp;utm_source=d88917dfdd9795e7da0217f20a1f3367</con:value>
     </con:property>
     <con:property>
       <con:name>XMLfileLocation</con:name>
@@ -992,11 +995,6 @@ log.info final_url
   </con:breakPoints>
   <con:breakPoints>
     <con:testStepId>52b267d6-8ffb-4584-be33-782c127da26c</con:testStepId>
-    <con:status>NONE</con:status>
-    <con:properties/>
-  </con:breakPoints>
-  <con:breakPoints>
-    <con:testStepId>a3bebef6-c3c3-4236-8cb2-f94267fc88c4</con:testStepId>
     <con:status>NONE</con:status>
     <con:properties/>
   </con:breakPoints>
