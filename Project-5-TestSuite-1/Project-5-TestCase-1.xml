@@ -58,11 +58,6 @@
             <codes>200</codes>
           </con:configuration>
         </con:assertion>
-        <con:assertion type="Invalid HTTP Status Codes" id="d2889d56-e678-4da2-ae07-cc36a7f2a487" name="Invalid HTTP Status Codes">
-          <con:configuration>
-            <codes>500</codes>
-          </con:configuration>
-        </con:assertion>
         <con:credentials>
           <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
           <con:authType>No Authorization</con:authType>
