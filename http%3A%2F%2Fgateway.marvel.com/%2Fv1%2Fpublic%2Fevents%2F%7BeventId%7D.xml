@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="/v1/public/events/{eventId}" path="/v1/public/events/{eventId}" id="c2d4a84f-e81b-4ac0-a036-a96059fa162c" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="c2d4a84f-e81b-4ac0-a036-a96059fa162cfileName">%2Fv1%2Fpublic%2Fevents%2F%7BeventId%7D</con:setting>
+  </con:settings>
+  <con:parameters>
+    <con:parameter required="true">
+      <con:name>eventId</con:name>
+      <con:style>TEMPLATE</con:style>
+      <con:description>A single event.</con:description>
+    </con:parameter>
+  </con:parameters>
+  <con:method name="getEventIndividual" id="fe4d4a11-e8b5-43ed-8179-7569bd63d5e5" method="GET">
+    <con:description>Fetches a single event by id.</con:description>
+    <con:settings/>
+    <con:parameters/>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>404</con:status>
+      <con:params/>
+      <con:sampleContent>Event not found.</con:sampleContent>
+    </con:representation>
+    <con:request name="Request 1" id="c59a4814-73a4-4cd2-be16-9c01e398c1ec" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>http://gateway.marvel.com</con:endpoint>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

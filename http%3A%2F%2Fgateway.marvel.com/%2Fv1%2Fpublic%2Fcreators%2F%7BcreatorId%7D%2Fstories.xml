@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="/v1/public/creators/{creatorId}/stories" path="/v1/public/creators/{creatorId}/stories" id="b2612066-3e06-45cd-b82c-3b953fd50287" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="b2612066-3e06-45cd-b82c-3b953fd50287fileName">%2Fv1%2Fpublic%2Fcreators%2F%7BcreatorId%7D%2Fstories</con:setting>
+  </con:settings>
+  <con:parameters>
+    <con:parameter required="true">
+      <con:name>creatorId</con:name>
+      <con:style>TEMPLATE</con:style>
+      <con:description>The ID of the creator.</con:description>
+    </con:parameter>
+  </con:parameters>
+  <con:method name="getCreatorStoryCollection" id="9d90d012-012e-4618-bb17-656f85f34cb7" method="GET">
+    <con:description>Fetches lists of stories filtered by a creator id.</con:description>
+    <con:settings/>
+    <con:parameters>
+      <con:parameter>
+        <con:name>modifiedSince</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>Return only stories which have been modified since the specified date.</con:description>
+      </con:parameter>
+      <con:parameter>
+        <con:name>comics</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>Return only stories contained in the specified comics (accepts a comma-separated list of ids).</con:description>
+      </con:parameter>
+      <con:parameter>
+        <con:name>series</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>Return only stories contained the specified series (accepts a comma-separated list of ids).</con:description>
+      </con:parameter>
+      <con:parameter>
+        <con:name>events</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>Return only stories which take place during the specified events (accepts a comma-separated list of ids).</con:description>
+      </con:parameter>
+      <con:parameter>
+        <con:name>characters</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>Return only stories which feature the specified characters (accepts a comma-separated list of ids).</con:description>
+      </con:parameter>
+      <con:parameter>
+        <con:name>orderBy</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed.</con:description>
+      </con:parameter>
+      <con:parameter>
+        <con:name>limit</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>Limit the result set to the specified number of resources.</con:description>
+      </con:parameter>
+      <con:parameter>
+        <con:name>offset</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>Skip the specified number of resources in the result set.</con:description>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>409</con:status>
+      <con:params/>
+      <con:sampleContent>Limit greater than 100.</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>409</con:status>
+      <con:params/>
+      <con:sampleContent>Limit invalid or below 1.</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>409</con:status>
+      <con:params/>
+      <con:sampleContent>Invalid or unrecognized parameter.</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>409</con:status>
+      <con:params/>
+      <con:sampleContent>Empty parameter.</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>409</con:status>
+      <con:params/>
+      <con:sampleContent>Invalid or unrecognized ordering parameter.</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>409</con:status>
+      <con:params/>
+      <con:sampleContent>Too many values sent to a multi-value list filter.</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>409</con:status>
+      <con:params/>
+      <con:sampleContent>Invalid value passed to filter.</con:sampleContent>
+    </con:representation>
+    <con:request name="Request 1" id="efbabf4c-bf35-45e5-9bcc-04cfec36f7dc" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>http://gateway.marvel.com</con:endpoint>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

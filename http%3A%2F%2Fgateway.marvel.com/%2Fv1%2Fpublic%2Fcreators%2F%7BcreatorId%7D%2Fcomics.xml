@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="/v1/public/creators/{creatorId}/comics" path="/v1/public/creators/{creatorId}/comics" id="ebf9122f-d06a-4dc8-b4ff-6f0a616c30bb" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="ebf9122f-d06a-4dc8-b4ff-6f0a616c30bbfileName">%2Fv1%2Fpublic%2Fcreators%2F%7BcreatorId%7D%2Fcomics</con:setting>
+  </con:settings>
+  <con:parameters>
+    <con:parameter required="true">
+      <con:name>creatorId</con:name>
+      <con:style>TEMPLATE</con:style>
+      <con:description>The creator ID.</con:description>
+    </con:parameter>
+  </con:parameters>
+  <con:method name="getComicsCollection" id="dafaaaa0-bb43-4417-b19d-bf6fab54036e" method="GET">
+    <con:description>Fetches lists of comics filtered by a creator id.</con:description>
+    <con:settings/>
+    <con:parameters>
+      <con:parameter>
+        <con:name>format</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>Filter by the issue format (e.g. comic, digital comic, hardcover).</con:description>
+      </con:parameter>
+      <con:parameter>
+        <con:name>formatType</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>Filter by the issue format type (comic or collection).</con:description>
+      </con:parameter>
+      <con:parameter>
+        <con:name>noVariants</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>Exclude variant comics from the result set.</con:description>
+      </con:parameter>
+      <con:parameter>
+        <con:name>dateDescriptor</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>Return comics within a predefined date range.</con:description>
+      </con:parameter>
+      <con:parameter>
+        <con:name>dateRange</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>Return comics within a predefined date range.  Dates must be specified as date1,date2 (e.g. 2013-01-01,2013-01-02).  Dates are preferably formatted as YYYY-MM-DD but may be sent as any common date format.</con:description>
+      </con:parameter>
+      <con:parameter>
+        <con:name>title</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>Return only issues in series whose title matches the input.</con:description>
+      </con:parameter>
+      <con:parameter>
+        <con:name>titleStartsWith</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>Return only issues in series whose title starts with the input.</con:description>
+      </con:parameter>
+      <con:parameter>
+        <con:name>startYear</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>Return only issues in series whose start year matches the input.</con:description>
+      </con:parameter>
+      <con:parameter>
+        <con:name>issueNumber</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>Return only issues in series whose issue number matches the input.</con:description>
+      </con:parameter>
+      <con:parameter>
+        <con:name>diamondCode</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>Filter by diamond code.</con:description>
+      </con:parameter>
+      <con:parameter>
+        <con:name>digitalId</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>Filter by digital comic id.</con:description>
+      </con:parameter>
+      <con:parameter>
+        <con:name>upc</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>Filter by UPC.</con:description>
+      </con:parameter>
+      <con:parameter>
+        <con:name>isbn</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>Filter by ISBN.</con:description>
+      </con:parameter>
+      <con:parameter>
+        <con:name>ean</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>Filter by EAN.</con:description>
+      </con:parameter>
+      <con:parameter>
+        <con:name>issn</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>Filter by ISSN.</con:description>
+      </con:parameter>
+      <con:parameter>
+        <con:name>hasDigitalIssue</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>Include only results which are available digitally.</con:description>
+      </con:parameter>
+      <con:parameter>
+        <con:name>modifiedSince</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>Return only comics which have been modified since the specified date.</con:description>
+      </con:parameter>
+      <con:parameter>
+        <con:name>characters</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>Return only comics which feature the specified characters (accepts a comma-separated list of ids).</con:description>
+      </con:parameter>
+      <con:parameter>
+        <con:name>series</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>Return only comics which are part of the specified series (accepts a comma-separated list of ids).</con:description>
+      </con:parameter>
+      <con:parameter>
+        <con:name>events</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>Return only comics which take place in the specified events (accepts a comma-separated list of ids).</con:description>
+      </con:parameter>
+      <con:parameter>
+        <con:name>stories</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>Return only comics which contain the specified stories (accepts a comma-separated list of ids).</con:description>
+      </con:parameter>
+      <con:parameter>
+        <con:name>sharedAppearances</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>Return only comics in which the specified characters appear together (for example in which BOTH Spider-Man and Wolverine appear).</con:description>
+      </con:parameter>
+      <con:parameter>
+        <con:name>collaborators</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>Return only comics in which the specified creators worked together (for example in which BOTH Stan Lee and Jack Kirby did work).</con:description>
+      </con:parameter>
+      <con:parameter>
+        <con:name>orderBy</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed.</con:description>
+      </con:parameter>
+      <con:parameter>
+        <con:name>limit</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>Limit the result set to the specified number of resources.</con:description>
+      </con:parameter>
+      <con:parameter>
+        <con:name>offset</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>Skip the specified number of resources in the result set.</con:description>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>409</con:status>
+      <con:params/>
+      <con:sampleContent>Limit greater than 100.</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>409</con:status>
+      <con:params/>
+      <con:sampleContent>Limit invalid or below 1.</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>409</con:status>
+      <con:params/>
+      <con:sampleContent>Invalid or unrecognized parameter.</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>409</con:status>
+      <con:params/>
+      <con:sampleContent>Empty parameter.</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>409</con:status>
+      <con:params/>
+      <con:sampleContent>Invalid or unrecognized ordering parameter.</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>409</con:status>
+      <con:params/>
+      <con:sampleContent>Too many values sent to a multi-value list filter.</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>409</con:status>
+      <con:params/>
+      <con:sampleContent>Invalid value passed to filter.</con:sampleContent>
+    </con:representation>
+    <con:request name="Request 1" id="b0b5db23-97fd-421e-8214-e7d6562ec500" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>http://gateway.marvel.com</con:endpoint>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

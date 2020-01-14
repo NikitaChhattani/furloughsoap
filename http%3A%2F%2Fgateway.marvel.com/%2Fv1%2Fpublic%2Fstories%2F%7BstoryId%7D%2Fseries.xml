@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="/v1/public/stories/{storyId}/series" path="/v1/public/stories/{storyId}/series" id="b51343b9-5d8f-4b3a-b0f1-8d9bf1792717" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="b51343b9-5d8f-4b3a-b0f1-8d9bf1792717fileName">%2Fv1%2Fpublic%2Fstories%2F%7BstoryId%7D%2Fseries</con:setting>
+  </con:settings>
+  <con:parameters>
+    <con:parameter required="true">
+      <con:name>storyId</con:name>
+      <con:style>TEMPLATE</con:style>
+      <con:description>The story ID.</con:description>
+    </con:parameter>
+  </con:parameters>
+  <con:method name="getStorySeriesCollection" id="14c3af6f-abb7-4b02-bf76-0a695b70da08" method="GET">
+    <con:description>Fetches lists of series filtered by a story id.</con:description>
+    <con:settings/>
+    <con:parameters>
+      <con:parameter>
+        <con:name>events</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>Return only series which have comics that take place during the specified events (accepts a comma-separated list of ids).</con:description>
+      </con:parameter>
+      <con:parameter>
+        <con:name>title</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>Filter by series title.</con:description>
+      </con:parameter>
+      <con:parameter>
+        <con:name>titleStartsWith</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>Return series with titles that begin with the specified string (e.g. Sp).</con:description>
+      </con:parameter>
+      <con:parameter>
+        <con:name>startYear</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>Return only series matching the specified start year.</con:description>
+      </con:parameter>
+      <con:parameter>
+        <con:name>modifiedSince</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>Return only series which have been modified since the specified date.</con:description>
+      </con:parameter>
+      <con:parameter>
+        <con:name>comics</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>Return only series which contain the specified comics (accepts a comma-separated list of ids).</con:description>
+      </con:parameter>
+      <con:parameter>
+        <con:name>creators</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>Return only series which feature work by the specified creators (accepts a comma-separated list of ids).</con:description>
+      </con:parameter>
+      <con:parameter>
+        <con:name>characters</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>Return only series which feature the specified characters (accepts a comma-separated list of ids).</con:description>
+      </con:parameter>
+      <con:parameter>
+        <con:name>seriesType</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>Filter the series by publication frequency type.</con:description>
+      </con:parameter>
+      <con:parameter>
+        <con:name>contains</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>Return only series containing one or more comics with the specified format.</con:description>
+      </con:parameter>
+      <con:parameter>
+        <con:name>orderBy</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed.</con:description>
+      </con:parameter>
+      <con:parameter>
+        <con:name>limit</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>Limit the result set to the specified number of resources.</con:description>
+      </con:parameter>
+      <con:parameter>
+        <con:name>offset</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>Skip the specified number of resources in the result set.</con:description>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>409</con:status>
+      <con:params/>
+      <con:sampleContent>Limit greater than 100.</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>409</con:status>
+      <con:params/>
+      <con:sampleContent>Limit invalid or below 1.</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>409</con:status>
+      <con:params/>
+      <con:sampleContent>Invalid or unrecognized parameter.</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>409</con:status>
+      <con:params/>
+      <con:sampleContent>Empty parameter.</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>409</con:status>
+      <con:params/>
+      <con:sampleContent>Invalid or unrecognized ordering parameter.</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>409</con:status>
+      <con:params/>
+      <con:sampleContent>Too many values sent to a multi-value list filter.</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>409</con:status>
+      <con:params/>
+      <con:sampleContent>Invalid value passed to filter.</con:sampleContent>
+    </con:representation>
+    <con:request name="Request 1" id="d9947219-26f8-4843-ad88-02dc077e0646" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>http://gateway.marvel.com</con:endpoint>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

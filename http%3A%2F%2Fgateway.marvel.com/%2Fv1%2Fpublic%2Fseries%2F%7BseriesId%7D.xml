@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="/v1/public/series/{seriesId}" path="/v1/public/series/{seriesId}" id="740fc86e-37e4-420b-98d7-30521fe4e927" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="740fc86e-37e4-420b-98d7-30521fe4e927fileName">%2Fv1%2Fpublic%2Fseries%2F%7BseriesId%7D</con:setting>
+  </con:settings>
+  <con:parameters>
+    <con:parameter required="true">
+      <con:name>seriesId</con:name>
+      <con:style>TEMPLATE</con:style>
+      <con:description>Filter by series title.</con:description>
+    </con:parameter>
+  </con:parameters>
+  <con:method name="getSeriesIndividual" id="d7bfc41f-bc06-4976-8d29-b144ef7aeec4" method="GET">
+    <con:description>Fetches a single comic series by id.</con:description>
+    <con:settings/>
+    <con:parameters/>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>404</con:status>
+      <con:params/>
+      <con:sampleContent>Series not found.</con:sampleContent>
+    </con:representation>
+    <con:request name="Request 1" id="3b09b3fe-4db7-4b01-8840-2f7c99b77163" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>http://gateway.marvel.com</con:endpoint>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

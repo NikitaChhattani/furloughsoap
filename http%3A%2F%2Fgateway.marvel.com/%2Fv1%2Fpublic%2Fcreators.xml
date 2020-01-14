@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="/v1/public/creators" path="/v1/public/creators" id="6f044a72-e80e-480c-acbb-40a5ffa17689" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="6f044a72-e80e-480c-acbb-40a5ffa17689fileName">%2Fv1%2Fpublic%2Fcreators</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="getCreatorCollection" id="b1d64208-0d32-40de-94d2-2617ec597a6d" method="GET">
+    <con:description>Fetches lists of creators.</con:description>
+    <con:settings/>
+    <con:parameters>
+      <con:parameter>
+        <con:name>firstName</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>Filter by creator first name (e.g. Brian).</con:description>
+      </con:parameter>
+      <con:parameter>
+        <con:name>middleName</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>Filter by creator middle name (e.g. Michael).</con:description>
+      </con:parameter>
+      <con:parameter>
+        <con:name>lastName</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>Filter by creator last name (e.g. Bendis).</con:description>
+      </con:parameter>
+      <con:parameter>
+        <con:name>suffix</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>Filter by suffix or honorific (e.g. Jr., Sr.).</con:description>
+      </con:parameter>
+      <con:parameter>
+        <con:name>nameStartsWith</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>Filter by creator names that match critera (e.g. B, St L).</con:description>
+      </con:parameter>
+      <con:parameter>
+        <con:name>firstNameStartsWith</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>Filter by creator first names that match critera (e.g. B, St L).</con:description>
+      </con:parameter>
+      <con:parameter>
+        <con:name>middleNameStartsWith</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>Filter by creator middle names that match critera (e.g. Mi).</con:description>
+      </con:parameter>
+      <con:parameter>
+        <con:name>lastNameStartsWith</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>Filter by creator last names that match critera (e.g. Ben).</con:description>
+      </con:parameter>
+      <con:parameter>
+        <con:name>modifiedSince</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>Return only creators which have been modified since the specified date.</con:description>
+      </con:parameter>
+      <con:parameter>
+        <con:name>comics</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>Return only creators who worked on in the specified comics (accepts a comma-separated list of ids).</con:description>
+      </con:parameter>
+      <con:parameter>
+        <con:name>series</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>Return only creators who worked on the specified series (accepts a comma-separated list of ids).</con:description>
+      </con:parameter>
+      <con:parameter>
+        <con:name>events</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>Return only creators who worked on comics that took place in the specified events (accepts a comma-separated list of ids).</con:description>
+      </con:parameter>
+      <con:parameter>
+        <con:name>stories</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>Return only creators who worked on the specified stories (accepts a comma-separated list of ids).</con:description>
+      </con:parameter>
+      <con:parameter>
+        <con:name>orderBy</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed.</con:description>
+      </con:parameter>
+      <con:parameter>
+        <con:name>limit</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>Limit the result set to the specified number of resources.</con:description>
+      </con:parameter>
+      <con:parameter>
+        <con:name>offset</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>Skip the specified number of resources in the result set.</con:description>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>409</con:status>
+      <con:params/>
+      <con:sampleContent>Limit greater than 100.</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>409</con:status>
+      <con:params/>
+      <con:sampleContent>Limit invalid or below 1.</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>409</con:status>
+      <con:params/>
+      <con:sampleContent>Invalid or unrecognized parameter.</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>409</con:status>
+      <con:params/>
+      <con:sampleContent>Empty parameter.</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>409</con:status>
+      <con:params/>
+      <con:sampleContent>Invalid or unrecognized ordering parameter.</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>409</con:status>
+      <con:params/>
+      <con:sampleContent>Too many values sent to a multi-value list filter.</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>409</con:status>
+      <con:params/>
+      <con:sampleContent>Invalid value passed to filter.</con:sampleContent>
+    </con:representation>
+    <con:request name="Request 1" id="8491cf34-caff-4b79-b3f8-2faf664a3f8e" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>http://gateway.marvel.com</con:endpoint>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

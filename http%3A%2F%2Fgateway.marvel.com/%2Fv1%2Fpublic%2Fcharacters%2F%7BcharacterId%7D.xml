@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="/v1/public/characters/{characterId}" path="/v1/public/characters/{characterId}" id="7305c634-2ee9-4fb4-8adb-dae07d5c3b6e" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="7305c634-2ee9-4fb4-8adb-dae07d5c3b6efileName">%2Fv1%2Fpublic%2Fcharacters%2F%7BcharacterId%7D</con:setting>
+  </con:settings>
+  <con:parameters>
+    <con:parameter required="true">
+      <con:name>characterId</con:name>
+      <con:style>TEMPLATE</con:style>
+      <con:description>A single character id.</con:description>
+    </con:parameter>
+  </con:parameters>
+  <con:method name="getCharacterIndividual" id="f6e38a88-b932-49b2-a228-eaa537f61de2" method="GET">
+    <con:description>Fetches a single character by id.</con:description>
+    <con:settings/>
+    <con:parameters/>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>404</con:status>
+      <con:params/>
+      <con:sampleContent>Character not found.</con:sampleContent>
+    </con:representation>
+    <con:request name="Request 1" id="7ee5a393-8657-4f3b-b422-a940297d206c" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>http://gateway.marvel.com</con:endpoint>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

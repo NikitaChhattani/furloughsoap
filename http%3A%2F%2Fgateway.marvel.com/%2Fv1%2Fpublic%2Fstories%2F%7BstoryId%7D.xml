@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="/v1/public/stories/{storyId}" path="/v1/public/stories/{storyId}" id="db074a04-4c1f-4996-87a4-c06a798664a5" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="db074a04-4c1f-4996-87a4-c06a798664a5fileName">%2Fv1%2Fpublic%2Fstories%2F%7BstoryId%7D</con:setting>
+  </con:settings>
+  <con:parameters>
+    <con:parameter required="true">
+      <con:name>storyId</con:name>
+      <con:style>TEMPLATE</con:style>
+      <con:description>Filter by story id.</con:description>
+    </con:parameter>
+  </con:parameters>
+  <con:method name="getStoryIndividual" id="b4e1b263-6299-4ee9-91db-b7767e33f153" method="GET">
+    <con:description>Fetches a single comic story by id.</con:description>
+    <con:settings/>
+    <con:parameters/>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>404</con:status>
+      <con:params/>
+      <con:sampleContent>Story not found.</con:sampleContent>
+    </con:representation>
+    <con:request name="Request 1" id="3a3a1e6b-42f7-4022-809e-ae7ab00f2f73" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>http://gateway.marvel.com</con:endpoint>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

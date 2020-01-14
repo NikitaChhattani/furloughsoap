@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="/v1/public/comics/{comicId}" path="/v1/public/comics/{comicId}" id="7a3e5187-c1b6-469e-870d-a7525b71d459" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="7a3e5187-c1b6-469e-870d-a7525b71d459fileName">%2Fv1%2Fpublic%2Fcomics%2F%7BcomicId%7D</con:setting>
+  </con:settings>
+  <con:parameters>
+    <con:parameter required="true">
+      <con:name>comicId</con:name>
+      <con:style>TEMPLATE</con:style>
+      <con:description>A single comic.</con:description>
+    </con:parameter>
+  </con:parameters>
+  <con:method name="getComicIndividual" id="1b610de8-421e-4895-a52d-3a8f15b849b8" method="GET">
+    <con:description>Fetches a single comic by id.</con:description>
+    <con:settings/>
+    <con:parameters/>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>404</con:status>
+      <con:params/>
+      <con:sampleContent>Comic not found.</con:sampleContent>
+    </con:representation>
+    <con:request name="Request 1" id="896dac87-08ab-4534-bc23-1908ae116f3a" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>http://gateway.marvel.com</con:endpoint>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

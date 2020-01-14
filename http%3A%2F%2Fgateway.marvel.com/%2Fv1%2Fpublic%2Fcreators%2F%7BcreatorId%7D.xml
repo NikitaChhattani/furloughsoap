@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="/v1/public/creators/{creatorId}" path="/v1/public/creators/{creatorId}" id="6ea16108-35f3-4a01-9959-309d437d25ce" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="6ea16108-35f3-4a01-9959-309d437d25cefileName">%2Fv1%2Fpublic%2Fcreators%2F%7BcreatorId%7D</con:setting>
+  </con:settings>
+  <con:parameters>
+    <con:parameter required="true">
+      <con:name>creatorId</con:name>
+      <con:style>TEMPLATE</con:style>
+      <con:description>A single creator id.</con:description>
+    </con:parameter>
+  </con:parameters>
+  <con:method name="getCreatorIndividual" id="073c5db4-487a-41d7-b9f0-8297f272b507" method="GET">
+    <con:description>Fetches a single creator by id.</con:description>
+    <con:settings/>
+    <con:parameters/>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>404</con:status>
+      <con:params/>
+      <con:sampleContent>Creator not found.</con:sampleContent>
+    </con:representation>
+    <con:request name="Request 1" id="400ed60d-9c32-4b41-82bc-51dc5060f72f" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>http://gateway.marvel.com</con:endpoint>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

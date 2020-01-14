@@ -1,0 +1,1046 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="f2e4d38a-4d92-48b8-b1af-ed20fa85dab5" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="Project 5 TestCase 1" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="f2e4d38a-4d92-48b8-b1af-ed20fa85dab5fileName">Project-5-TestCase-1</con:setting>
+  </con:settings>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:testStep type="restrequest" name="/v1/public/characters GET Request 1" id="b63fdec7-9ca9-482d-8519-88079931b093" disabled="true">
+    <con:settings/>
+    <con:config service="http://gateway.marvel.com" resourcePath="/v1/public/characters" methodName="getCreatorCollection" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="/v1/public/characters GET Request 1" id="d26cacb6-69cd-4fd4-baa4-40dcb6f31468" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>http://gateway.marvel.com</con:endpoint>
+        <con:request/>
+        <con:originalUri>http://gateway.marvel.com/v1/public/characters</con:originalUri>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="apikey" value=""/>
+          <con:entry key="hash" value=""/>
+          <con:entry key="ts" value=""/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>name</con:entry>
+          <con:entry>nameStartsWith</con:entry>
+          <con:entry>modifiedSince</con:entry>
+          <con:entry>comics</con:entry>
+          <con:entry>series</con:entry>
+          <con:entry>events</con:entry>
+          <con:entry>stories</con:entry>
+          <con:entry>orderBy</con:entry>
+          <con:entry>limit</con:entry>
+          <con:entry>offset</con:entry>
+          <con:entry>ts</con:entry>
+          <con:entry>hash</con:entry>
+          <con:entry>apikey</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="getCreatorCollection - Working" id="ed0b5288-6f9d-4543-b548-0840e102534d">
+    <con:settings/>
+    <con:config service="http://gateway.marvel.com" resourcePath="/v1/public/characters" methodName="getCreatorCollection" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="getCreatorCollection - Working" id="d26cacb6-69cd-4fd4-baa4-40dcb6f31468" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>http://gateway.marvel.com</con:endpoint>
+        <con:request/>
+        <con:originalUri>http://gateway.marvel.com/v1/public/characters</con:originalUri>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="apikey" value="d88917dfdd9795e7da0217f20a1f3367"/>
+          <con:entry key="nameStartsWith" value="spider"/>
+          <con:entry key="hash" value="5b10f1ece124863d880570c882220712"/>
+          <con:entry key="ts" value="1578815733"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>name</con:entry>
+          <con:entry>nameStartsWith</con:entry>
+          <con:entry>modifiedSince</con:entry>
+          <con:entry>comics</con:entry>
+          <con:entry>series</con:entry>
+          <con:entry>events</con:entry>
+          <con:entry>stories</con:entry>
+          <con:entry>orderBy</con:entry>
+          <con:entry>limit</con:entry>
+          <con:entry>offset</con:entry>
+          <con:entry>ts</con:entry>
+          <con:entry>hash</con:entry>
+          <con:entry>apikey</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="CreateAndWaitForRemoveFile" name="response" id="4fb67d0a-e190-4990-a7d6-3af41b3ffaaf">
+    <con:settings/>
+    <con:config>
+      <FileName>MarvelCollections.xml</FileName>
+      <FileContent>${getCreatorCollection - Working#ResponseAsXml#declare namespace ns1='http://gateway.marvel.com/v1/public/characters'; //ns1:Response[1]/ns1:data[1]/ns1:results[1]}</FileContent>
+      <FolderPath>C:\Users\NikitaChhattani\Desktop\Furloughproject\Marvel</FolderPath>
+      <Timeout>0</Timeout>
+      <WaitForFileRemove>false</WaitForFileRemove>
+      <OverwriteExisting>true</OverwriteExisting>
+      <FileEncoding>Unicode</FileEncoding>
+      <Precision>seconds</Precision>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="delay" name="Delay" id="3a2ddabd-eea0-47b6-94c6-99299065de03">
+    <con:settings/>
+    <con:config>
+      <delay>1000</delay>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="groovy" name="formatXmlLocation" id="1a49a849-e48f-47ef-b138-5d3eed092d92">
+    <con:settings/>
+    <con:config>
+      <script>def ResponsefolderPath = context.expand( '${response#FolderPath}' )
+def responsefileName = context.expand( '${response#fileName}' )
+log.info ResponsefolderPath
+log.info responsefileName
+
+String sb= new StringBuilder().append(ResponsefolderPath).append("/").append(responsefileName).toString()
+String ResponseFileLocation= sb.replace("\\","/")
+log.info ResponseFileLocation
+//def XMLfileLocation
+testRunner.testCase.setPropertyValue("XMLfileLocation", ResponseFileLocation)</script>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="CreateAndWaitForRemoveFile" name="Vb script-XMLtoExcel" id="451026fc-ca5f-46ed-8a92-23915dd17744">
+    <con:settings/>
+    <con:config>
+      <FileName>XMLtoExcel.vbs</FileName>
+      <FileContent>'Code from Officetricks.com
+    'Add referece from Menu: "Tools -> References -> Microsoft XML Vn.0"
+	
+	Dim iRow,iCol
+    Dim xmlDoc, xmlRoot
+    Dim xmlNodes, xmlData
+    
+	Dim oXML, oXSLNode
+	Set oXML = CreateObject("MSXML2.DOMDocument")
+    'Set xmlData = CreateObject("MSXML2.IXMLDOMNode")'
+	'Set oXSLNode = CreateObject("MSXML2.IXMLDOMNode")'
+	'Set xmlData = CreateObject("MSXML2.IXMLDOMNode")'
+	
+	Set objExcel = CreateObject("Excel.Application")
+    objExcel.Visible = true
+    Set objWorkbook = objExcel.Workbooks.Add()
+    Set objWorksheet = objWorkbook.Worksheets(1)
+	
+	oXML.async = False
+    oXML.validateOnParse = False
+    oXML.Load"${#TestCase#XMLfileLocation}"
+	
+	Set xmlRoot = oXML.DocumentElement
+    Set xmlNodes = xmlRoot.FirstChild
+	
+	iRow = 0
+    For Each xmlNodes In xmlRoot.ChildNodes
+        iRow = iRow + 1
+        iCol = 0
+        
+        For Each xmlData In xmlNodes.ChildNodes
+            iCol = iCol + 1
+            objWorksheet.Cells(1, iCol) = xmlData.BaseName
+            objWorksheet.Cells(iRow, iCol) = xmlData.Text
+        Next 
+		
+    Next 
+	
+	Wscript.Echo "conversion done"
+Wscript.Quit</FileContent>
+      <FolderPath>C:\Users\NikitaChhattani\Desktop\Furloughproject\Marvel</FolderPath>
+      <Timeout>0</Timeout>
+      <WaitForFileRemove>false</WaitForFileRemove>
+      <OverwriteExisting>true</OverwriteExisting>
+      <FileEncoding>US-ASCII</FileEncoding>
+      <Precision>seconds</Precision>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="delay" name="Delay 2" id="4a90cd82-4146-4cba-a377-78974a1a45b0">
+    <con:settings/>
+    <con:config>
+      <delay>1000</delay>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="groovy" name="RunVbs-XMLtoExcel" id="eef9b036-1482-45a2-9253-fa4fb8fd794c">
+    <con:settings/>
+    <con:config>
+      <script>public static void main(String[] args) {
+   try {
+def VBfolderPath = context.expand( '${Vb script-XMLtoExcel#FolderPath}' )
+log.info VBfolderPath 
+def VBfileName = context.expand( '${Vb script-XMLtoExcel#fileName}' )
+log.info VBfileName
+String sb= new StringBuilder().append(VBfolderPath).append("/").append(VBfileName).toString()
+String final_url= sb.replace("\\","/")
+log.info final_url
+//log.info sb
+//def Final_fileName
+      Runtime.getRuntime().exec( "wscript  "+final_url);
+   }
+   catch( IOException e ) {
+      System.out.println(e);
+      System.exit(0);
+   }
+}</script>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="delay" name="Delay 3" id="52b267d6-8ffb-4584-be33-782c127da26c">
+    <con:settings/>
+    <con:config>
+      <delay>1000</delay>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="datasource" name="DataSource" id="a3bebef6-c3c3-4236-8cb2-f94267fc88c4">
+    <con:settings/>
+    <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:dataSource type="Excel">
+        <con:configuration>
+          <file>C:/Users/NikitaChhattani/Desktop/Furloughproject/Marvel/Book1.xlsx</file>
+          <worksheet>Sheet1</worksheet>
+          <cell>A1</cell>
+          <ignoreEmpty>false</ignoreEmpty>
+          <evaluateFormulas>false</evaluateFormulas>
+        </con:configuration>
+      </con:dataSource>
+      <con:shared>true</con:shared>
+      <con:restartShared>true</con:restartShared>
+      <con:property>1</con:property>
+      <con:property>2</con:property>
+      <con:property>3</con:property>
+      <con:property>4</con:property>
+      <con:property>5</con:property>
+      <con:property>6</con:property>
+      <con:property>7</con:property>
+      <con:property>8</con:property>
+      <con:property>9</con:property>
+      <con:property>10</con:property>
+      <con:property>11</con:property>
+      <con:startRow>2</con:startRow>
+      <con:endRow/>
+      <con:recordsPerIteration>1</con:recordsPerIteration>
+      <con:completeLastOperation>true</con:completeLastOperation>
+      <con:trimValues>false</con:trimValues>
+      <con:entitizeValues>false</con:entitizeValues>
+      <con:restartOnRun>true</con:restartOnRun>
+      <con:expandProperties>false</con:expandProperties>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="delay" name="Delay 4" id="04134e60-cab8-4cda-bb87-b63b4a719e15">
+    <con:settings/>
+    <con:config>
+      <delay>1000</delay>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="groovy" name="FormatURL" id="0f541446-61cb-4dd2-b818-542f852ff310">
+    <con:settings/>
+    <con:config>
+      <script>def url = context.expand( '${DataSource#11}' )
+String[] arrOfStr = url.split(" ", 6); 
+def ru= arrOfStr[1]
+
+log.info ru
+def browse_URL
+testRunner.testCase.setPropertyValue("browse_URL", ru)</script>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="delay" name="Delay 5" id="abb2229c-9fb7-4714-a64e-58071ab2e6f4">
+    <con:settings/>
+    <con:config>
+      <delay>1000</delay>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="CreateAndWaitForRemoveFile" name="VBA-IEBrowseURL" id="55cc007d-a853-40fc-8263-38dcef27eccf">
+    <con:settings/>
+    <con:config>
+      <FileName>IEBrowseURL.vbs</FileName>
+      <FileContent>Set browser = CreateObject("InternetExplorer.Application")
+
+browser.Visible = True
+
+browser.Navigate ("${#TestCase#browse_URL}")</FileContent>
+      <FolderPath>C:\Users\NikitaChhattani\Desktop\Furloughproject\Marvel</FolderPath>
+      <Timeout>0</Timeout>
+      <WaitForFileRemove>false</WaitForFileRemove>
+      <OverwriteExisting>true</OverwriteExisting>
+      <FileEncoding>US-ASCII</FileEncoding>
+      <Precision>seconds</Precision>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="delay" name="Delay 6" id="a0d5bee7-586b-4b86-9157-def878948f82">
+    <con:settings/>
+    <con:config>
+      <delay>1000</delay>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="groovy" name="RunVbs-IEBrowseURL" id="46884311-35a6-4fdb-9b13-21eea6d54749">
+    <con:settings/>
+    <con:config>
+      <script>public static void main(String[] args) {
+   try {
+def IEfolderPath = context.expand( '${VBA-IEBrowseURL#FolderPath}' )
+log.info IEfolderPath
+def IEfileName = context.expand( '${VBA-IEBrowseURL#fileName}' )
+log.info IEfileName
+String sb= new StringBuilder().append(IEfolderPath).append("/").append(IEfileName).toString()
+String final_url= sb.replace("\\","/")
+log.info final_url
+//log.info sb
+//def Final_fileName
+      Runtime.getRuntime().exec( "wscript  "+final_url);
+   }
+   catch( IOException e ) {
+      System.out.println(e);
+      System.exit(0);
+   }
+}</script>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="delay" name="Delay 7" id="5820f531-ac02-4d86-adf2-8f358a4c504b">
+    <con:settings/>
+    <con:config>
+      <delay>1000</delay>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="/v1/public/characters/{characterId} GET Request 1" id="15bcdf2b-d382-46ff-bda4-ecab27b1d972" disabled="true">
+    <con:settings/>
+    <con:config service="http://gateway.marvel.com" resourcePath="/v1/public/characters/{characterId}" methodName="getCharacterIndividual" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="/v1/public/characters/{characterId} GET Request 1" id="7ee5a393-8657-4f3b-b422-a940297d206c" mediaType="application/json">
+        <con:settings/>
+        <con:endpoint>http://gateway.marvel.com</con:endpoint>
+        <con:request/>
+        <con:originalUri>http://gateway.marvel.com/v1/public/characters/</con:originalUri>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="/v1/public/characters/{characterId}/comics GET Request 1" id="cae7878b-7971-42ec-b9ff-ba0ef10dd9e2" disabled="true">
+    <con:settings/>
+    <con:config service="http://gateway.marvel.com" resourcePath="/v1/public/characters/{characterId}/comics" methodName="getComicsCharacterCollection" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="/v1/public/characters/{characterId}/comics GET Request 1" id="6044ba31-46c9-47c6-bfa8-ad567abe7fdd" mediaType="application/json">
+        <con:settings/>
+        <con:endpoint>http://gateway.marvel.com</con:endpoint>
+        <con:request/>
+        <con:originalUri>http://gateway.marvel.com/v1/public/characters/comics</con:originalUri>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="/v1/public/characters/{characterId}/events GET Request 1" id="9526a426-63c2-44ae-a3db-f15cd8d62c16" disabled="true">
+    <con:settings/>
+    <con:config service="http://gateway.marvel.com" resourcePath="/v1/public/characters/{characterId}/events" methodName="getCharacterEventsCollection" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="/v1/public/characters/{characterId}/events GET Request 1" id="1fe35030-a52c-4c03-b643-6ae2b538b685" mediaType="application/json">
+        <con:settings/>
+        <con:endpoint>http://gateway.marvel.com</con:endpoint>
+        <con:request/>
+        <con:originalUri>http://gateway.marvel.com/v1/public/characters/events</con:originalUri>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="/v1/public/characters/{characterId}/series GET Request 1" id="48f8bedd-dde9-412b-85fd-6ba3849c45f6" disabled="true">
+    <con:settings/>
+    <con:config service="http://gateway.marvel.com" resourcePath="/v1/public/characters/{characterId}/series" methodName="getCharacterSeriesCollection" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="/v1/public/characters/{characterId}/series GET Request 1" id="8e4fee50-362e-49e7-8427-8d917090170a" mediaType="application/json">
+        <con:settings/>
+        <con:endpoint>http://gateway.marvel.com</con:endpoint>
+        <con:request/>
+        <con:originalUri>http://gateway.marvel.com/v1/public/characters/series</con:originalUri>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="/v1/public/characters/{characterId}/stories GET Request 1" id="e4142c52-6e67-4956-a5af-d292f9aedc17" disabled="true">
+    <con:settings/>
+    <con:config service="http://gateway.marvel.com" resourcePath="/v1/public/characters/{characterId}/stories" methodName="getCharacterStoryCollection" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="/v1/public/characters/{characterId}/stories GET Request 1" id="4628c674-4f5a-4a10-a43b-c48507d66a6d" mediaType="application/json">
+        <con:settings/>
+        <con:endpoint>http://gateway.marvel.com</con:endpoint>
+        <con:request/>
+        <con:originalUri>http://gateway.marvel.com/v1/public/characters/stories</con:originalUri>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="/v1/public/comics GET Request 1" id="f665bad6-2aa3-4231-9bba-d3a7379544ed" disabled="true">
+    <con:settings/>
+    <con:config service="http://gateway.marvel.com" resourcePath="/v1/public/comics" methodName="getComicsCollection" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="/v1/public/comics GET Request 1" id="6c14fdc8-fd01-4039-abef-3da173dc8307" mediaType="application/json">
+        <con:settings/>
+        <con:endpoint>http://gateway.marvel.com</con:endpoint>
+        <con:request/>
+        <con:originalUri>http://gateway.marvel.com/v1/public/comics</con:originalUri>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="/v1/public/comics/{comicId} GET Request 1" id="6ec629ad-2e63-45d3-986f-8e6ca4818cb6" disabled="true">
+    <con:settings/>
+    <con:config service="http://gateway.marvel.com" resourcePath="/v1/public/comics/{comicId}" methodName="getComicIndividual" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="/v1/public/comics/{comicId} GET Request 1" id="896dac87-08ab-4534-bc23-1908ae116f3a" mediaType="application/json">
+        <con:settings/>
+        <con:endpoint>http://gateway.marvel.com</con:endpoint>
+        <con:request/>
+        <con:originalUri>http://gateway.marvel.com/v1/public/comics/</con:originalUri>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="/v1/public/comics/{comicId}/characters GET Request 1" id="f129be85-b716-4f79-9f9e-13e1aa20b502" disabled="true">
+    <con:settings/>
+    <con:config service="http://gateway.marvel.com" resourcePath="/v1/public/comics/{comicId}/characters" methodName="getComicCharacterCollection" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="/v1/public/comics/{comicId}/characters GET Request 1" id="794fb10b-5047-4f07-98fe-098e7ec0146f" mediaType="application/json">
+        <con:settings/>
+        <con:endpoint>http://gateway.marvel.com</con:endpoint>
+        <con:request/>
+        <con:originalUri>http://gateway.marvel.com/v1/public/comics/characters</con:originalUri>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="/v1/public/comics/{comicId}/creators GET Request 1" id="abf55d74-fcd5-4178-8bd1-100adcdec300" disabled="true">
+    <con:settings/>
+    <con:config service="http://gateway.marvel.com" resourcePath="/v1/public/comics/{comicId}/creators" methodName="getCreatorCollection" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="/v1/public/comics/{comicId}/creators GET Request 1" id="51d4827b-43c3-40aa-8a02-38921f695c79" mediaType="application/json">
+        <con:settings/>
+        <con:endpoint>http://gateway.marvel.com</con:endpoint>
+        <con:request/>
+        <con:originalUri>http://gateway.marvel.com/v1/public/comics/creators</con:originalUri>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="/v1/public/comics/{comicId}/events GET Request 1" id="a3acd864-54b3-402c-ab4a-2976f32fe9a3" disabled="true">
+    <con:settings/>
+    <con:config service="http://gateway.marvel.com" resourcePath="/v1/public/comics/{comicId}/events" methodName="getIssueEventsCollection" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="/v1/public/comics/{comicId}/events GET Request 1" id="a596d054-bd09-4727-9b05-d0f144358fa3" mediaType="application/json">
+        <con:settings/>
+        <con:endpoint>http://gateway.marvel.com</con:endpoint>
+        <con:request/>
+        <con:originalUri>http://gateway.marvel.com/v1/public/comics/events</con:originalUri>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="/v1/public/comics/{comicId}/stories GET Request 1" id="c9c0a711-5010-4b02-ab2a-f1b51550306d" disabled="true">
+    <con:settings/>
+    <con:config service="http://gateway.marvel.com" resourcePath="/v1/public/comics/{comicId}/stories" methodName="getComicStoryCollection" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="/v1/public/comics/{comicId}/stories GET Request 1" id="588145ba-90a7-45c5-83ef-3ac1c24d0443" mediaType="application/json">
+        <con:settings/>
+        <con:endpoint>http://gateway.marvel.com</con:endpoint>
+        <con:request/>
+        <con:originalUri>http://gateway.marvel.com/v1/public/comics/stories</con:originalUri>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="/v1/public/creators GET Request 1" id="6b50822d-4a7f-4132-859f-dbecedb3872e" disabled="true">
+    <con:settings/>
+    <con:config service="http://gateway.marvel.com" resourcePath="/v1/public/creators" methodName="getCreatorCollection" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="/v1/public/creators GET Request 1" id="8491cf34-caff-4b79-b3f8-2faf664a3f8e" mediaType="application/json">
+        <con:settings/>
+        <con:endpoint>http://gateway.marvel.com</con:endpoint>
+        <con:request/>
+        <con:originalUri>http://gateway.marvel.com/v1/public/creators</con:originalUri>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="/v1/public/creators/{creatorId} GET Request 1" id="e71415ae-8178-48fd-b168-4a13d6b50116" disabled="true">
+    <con:settings/>
+    <con:config service="http://gateway.marvel.com" resourcePath="/v1/public/creators/{creatorId}" methodName="getCreatorIndividual" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="/v1/public/creators/{creatorId} GET Request 1" id="400ed60d-9c32-4b41-82bc-51dc5060f72f" mediaType="application/json">
+        <con:settings/>
+        <con:endpoint>http://gateway.marvel.com</con:endpoint>
+        <con:request/>
+        <con:originalUri>http://gateway.marvel.com/v1/public/creators/</con:originalUri>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="/v1/public/creators/{creatorId}/comics GET Request 1" id="d7ce6118-5a24-447f-9dfe-ba9a57a6caec" disabled="true">
+    <con:settings/>
+    <con:config service="http://gateway.marvel.com" resourcePath="/v1/public/creators/{creatorId}/comics" methodName="getComicsCollection" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="/v1/public/creators/{creatorId}/comics GET Request 1" id="b0b5db23-97fd-421e-8214-e7d6562ec500" mediaType="application/json">
+        <con:settings/>
+        <con:endpoint>http://gateway.marvel.com</con:endpoint>
+        <con:request/>
+        <con:originalUri>http://gateway.marvel.com/v1/public/creators/comics</con:originalUri>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="/v1/public/creators/{creatorId}/events GET Request 1" id="6fae9b1d-973b-4f45-b9fa-8079fe47ddd3" disabled="true">
+    <con:settings/>
+    <con:config service="http://gateway.marvel.com" resourcePath="/v1/public/creators/{creatorId}/events" methodName="getCreatorEventsCollection" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="/v1/public/creators/{creatorId}/events GET Request 1" id="bdb03a19-edde-45b5-b006-17b01199334b" mediaType="application/json">
+        <con:settings/>
+        <con:endpoint>http://gateway.marvel.com</con:endpoint>
+        <con:request/>
+        <con:originalUri>http://gateway.marvel.com/v1/public/creators/events</con:originalUri>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="/v1/public/creators/{creatorId}/series GET Request 1" id="49c9b2a6-85f2-4225-a8c3-fe4422430a99" disabled="true">
+    <con:settings/>
+    <con:config service="http://gateway.marvel.com" resourcePath="/v1/public/creators/{creatorId}/series" methodName="getCreatorSeriesCollection" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="/v1/public/creators/{creatorId}/series GET Request 1" id="872f750d-c4dd-4896-9867-323e7479bed1" mediaType="application/json">
+        <con:settings/>
+        <con:endpoint>http://gateway.marvel.com</con:endpoint>
+        <con:request/>
+        <con:originalUri>http://gateway.marvel.com/v1/public/creators/series</con:originalUri>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="/v1/public/creators/{creatorId}/stories GET Request 1" id="2126b219-8283-4c03-bd85-03a377b20edd" disabled="true">
+    <con:settings/>
+    <con:config service="http://gateway.marvel.com" resourcePath="/v1/public/creators/{creatorId}/stories" methodName="getCreatorStoryCollection" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="/v1/public/creators/{creatorId}/stories GET Request 1" id="efbabf4c-bf35-45e5-9bcc-04cfec36f7dc" mediaType="application/json">
+        <con:settings/>
+        <con:endpoint>http://gateway.marvel.com</con:endpoint>
+        <con:request/>
+        <con:originalUri>http://gateway.marvel.com/v1/public/creators/stories</con:originalUri>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="/v1/public/events GET Request 1" id="a2a06deb-db39-4b00-8698-51917af1eff6" disabled="true">
+    <con:settings/>
+    <con:config service="http://gateway.marvel.com" resourcePath="/v1/public/events" methodName="getEventsCollection" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="/v1/public/events GET Request 1" id="cbe8b985-9298-4f48-9195-dec094db0e0c" mediaType="application/json">
+        <con:settings/>
+        <con:endpoint>http://gateway.marvel.com</con:endpoint>
+        <con:request/>
+        <con:originalUri>http://gateway.marvel.com/v1/public/events</con:originalUri>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="/v1/public/events/{eventId} GET Request 1" id="39edf8a0-02f6-445a-a3bb-130266bb5d7e" disabled="true">
+    <con:settings/>
+    <con:config service="http://gateway.marvel.com" resourcePath="/v1/public/events/{eventId}" methodName="getEventIndividual" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="/v1/public/events/{eventId} GET Request 1" id="c59a4814-73a4-4cd2-be16-9c01e398c1ec" mediaType="application/json">
+        <con:settings/>
+        <con:endpoint>http://gateway.marvel.com</con:endpoint>
+        <con:request/>
+        <con:originalUri>http://gateway.marvel.com/v1/public/events/</con:originalUri>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="/v1/public/events/{eventId}/characters GET Request 1" id="ffc37b61-38f4-48d5-b639-5b5dee531bc7" disabled="true">
+    <con:settings/>
+    <con:config service="http://gateway.marvel.com" resourcePath="/v1/public/events/{eventId}/characters" methodName="getEventCharacterCollection" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="/v1/public/events/{eventId}/characters GET Request 1" id="29a4c184-d073-49cf-aded-5f0204c21832" mediaType="application/json">
+        <con:settings/>
+        <con:endpoint>http://gateway.marvel.com</con:endpoint>
+        <con:request/>
+        <con:originalUri>http://gateway.marvel.com/v1/public/events/characters</con:originalUri>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="/v1/public/events/{eventId}/comics GET Request 1" id="ce7bd9ba-d932-43a4-b14d-383969818dc2" disabled="true">
+    <con:settings/>
+    <con:config service="http://gateway.marvel.com" resourcePath="/v1/public/events/{eventId}/comics" methodName="getComicsCollection" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="/v1/public/events/{eventId}/comics GET Request 1" id="0958f1f8-3ae7-4e45-b852-d31a7fef13c4" mediaType="application/json">
+        <con:settings/>
+        <con:endpoint>http://gateway.marvel.com</con:endpoint>
+        <con:request/>
+        <con:originalUri>http://gateway.marvel.com/v1/public/events/comics</con:originalUri>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="/v1/public/events/{eventId}/creators GET Request 1" id="ca47579a-cac3-4233-a349-04813b588514" disabled="true">
+    <con:settings/>
+    <con:config service="http://gateway.marvel.com" resourcePath="/v1/public/events/{eventId}/creators" methodName="getCreatorCollection" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="/v1/public/events/{eventId}/creators GET Request 1" id="08647469-b2c9-403c-8497-c289f3ab0f57" mediaType="application/json">
+        <con:settings/>
+        <con:endpoint>http://gateway.marvel.com</con:endpoint>
+        <con:request/>
+        <con:originalUri>http://gateway.marvel.com/v1/public/events/creators</con:originalUri>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="/v1/public/events/{eventId}/series GET Request 1" id="a8b43281-1be6-4b7f-98db-2ccc98c8525f" disabled="true">
+    <con:settings/>
+    <con:config service="http://gateway.marvel.com" resourcePath="/v1/public/events/{eventId}/series" methodName="getEventSeriesCollection" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="/v1/public/events/{eventId}/series GET Request 1" id="2e43aa53-450e-4e6f-ac80-e3cfebcb01a4" mediaType="application/json">
+        <con:settings/>
+        <con:endpoint>http://gateway.marvel.com</con:endpoint>
+        <con:request/>
+        <con:originalUri>http://gateway.marvel.com/v1/public/events/series</con:originalUri>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="/v1/public/events/{eventId}/stories GET Request 1" id="31becf28-6a3a-4b2b-9e12-3c82a313c52b" disabled="true">
+    <con:settings/>
+    <con:config service="http://gateway.marvel.com" resourcePath="/v1/public/events/{eventId}/stories" methodName="getEventStoryCollection" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="/v1/public/events/{eventId}/stories GET Request 1" id="65cf4da4-0477-4e00-8bac-fdb70d0081b0" mediaType="application/json">
+        <con:settings/>
+        <con:endpoint>http://gateway.marvel.com</con:endpoint>
+        <con:request/>
+        <con:originalUri>http://gateway.marvel.com/v1/public/events/stories</con:originalUri>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="/v1/public/series GET Request 1" id="47ec3289-7484-41be-a075-8e286c227958" disabled="true">
+    <con:settings/>
+    <con:config service="http://gateway.marvel.com" resourcePath="/v1/public/series" methodName="getSeriesCollection" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="/v1/public/series GET Request 1" id="5c535a68-7b51-4265-9072-4d111b46d934" mediaType="application/json">
+        <con:settings/>
+        <con:endpoint>http://gateway.marvel.com</con:endpoint>
+        <con:request/>
+        <con:originalUri>http://gateway.marvel.com/v1/public/series</con:originalUri>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="/v1/public/series/{seriesId} GET Request 1" id="ebef2f8d-78fa-42af-b318-7b33fc7ca169" disabled="true">
+    <con:settings/>
+    <con:config service="http://gateway.marvel.com" resourcePath="/v1/public/series/{seriesId}" methodName="getSeriesIndividual" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="/v1/public/series/{seriesId} GET Request 1" id="3b09b3fe-4db7-4b01-8840-2f7c99b77163" mediaType="application/json">
+        <con:settings/>
+        <con:endpoint>http://gateway.marvel.com</con:endpoint>
+        <con:request/>
+        <con:originalUri>http://gateway.marvel.com/v1/public/series/</con:originalUri>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="/v1/public/series/{seriesId}/characters GET Request 1" id="221e26cc-9734-4073-8c6a-ef393b5465fe" disabled="true">
+    <con:settings/>
+    <con:config service="http://gateway.marvel.com" resourcePath="/v1/public/series/{seriesId}/characters" methodName="getSeriesCharacterWrapper" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="/v1/public/series/{seriesId}/characters GET Request 1" id="05e09042-bcd6-4e0c-9d1e-0fcda34a4e66" mediaType="application/json">
+        <con:settings/>
+        <con:endpoint>http://gateway.marvel.com</con:endpoint>
+        <con:request/>
+        <con:originalUri>http://gateway.marvel.com/v1/public/series/characters</con:originalUri>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="/v1/public/series/{seriesId}/comics GET Request 1" id="4158f2b8-de8e-4345-b9fb-0006dfe9744a" disabled="true">
+    <con:settings/>
+    <con:config service="http://gateway.marvel.com" resourcePath="/v1/public/series/{seriesId}/comics" methodName="getComicsCollection" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="/v1/public/series/{seriesId}/comics GET Request 1" id="cfe6992c-7cea-430f-8185-057e6d88d7f6" mediaType="application/json">
+        <con:settings/>
+        <con:endpoint>http://gateway.marvel.com</con:endpoint>
+        <con:request/>
+        <con:originalUri>http://gateway.marvel.com/v1/public/series/comics</con:originalUri>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="/v1/public/series/{seriesId}/creators GET Request 1" id="04572185-b5f1-482c-a7f4-b6d8757145c8" disabled="true">
+    <con:settings/>
+    <con:config service="http://gateway.marvel.com" resourcePath="/v1/public/series/{seriesId}/creators" methodName="getCreatorCollection" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="/v1/public/series/{seriesId}/creators GET Request 1" id="56251590-f465-4d01-b91f-b587b5ca6ae0" mediaType="application/json">
+        <con:settings/>
+        <con:endpoint>http://gateway.marvel.com</con:endpoint>
+        <con:request/>
+        <con:originalUri>http://gateway.marvel.com/v1/public/series/creators</con:originalUri>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="/v1/public/series/{seriesId}/events GET Request 1" id="c9bc757b-20ac-43f4-b49c-d47218330b6a" disabled="true">
+    <con:settings/>
+    <con:config service="http://gateway.marvel.com" resourcePath="/v1/public/series/{seriesId}/events" methodName="getEventsCollection" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="/v1/public/series/{seriesId}/events GET Request 1" id="d80ef809-e1e6-4b17-998c-bd5f2f54b838" mediaType="application/json">
+        <con:settings/>
+        <con:endpoint>http://gateway.marvel.com</con:endpoint>
+        <con:request/>
+        <con:originalUri>http://gateway.marvel.com/v1/public/series/events</con:originalUri>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="/v1/public/series/{seriesId}/stories GET Request 1" id="e88e8b9a-21fa-4e9e-80e9-47c5961be849" disabled="true">
+    <con:settings/>
+    <con:config service="http://gateway.marvel.com" resourcePath="/v1/public/series/{seriesId}/stories" methodName="getSeriesStoryCollection" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="/v1/public/series/{seriesId}/stories GET Request 1" id="d366c58d-f785-4ecb-bfde-1b3068414568" mediaType="application/json">
+        <con:settings/>
+        <con:endpoint>http://gateway.marvel.com</con:endpoint>
+        <con:request/>
+        <con:originalUri>http://gateway.marvel.com/v1/public/series/stories</con:originalUri>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="/v1/public/stories GET Request 1" id="315b0b55-4e95-4522-94f0-cd65835bab5d" disabled="true">
+    <con:settings/>
+    <con:config service="http://gateway.marvel.com" resourcePath="/v1/public/stories" methodName="getStoryCollection" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="/v1/public/stories GET Request 1" id="f90f0c78-d9bd-4985-9941-a9feaee94400" mediaType="application/json">
+        <con:settings/>
+        <con:endpoint>http://gateway.marvel.com</con:endpoint>
+        <con:request/>
+        <con:originalUri>http://gateway.marvel.com/v1/public/stories</con:originalUri>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="/v1/public/stories/{storyId} GET Request 1" id="96ed2d3d-c1cd-4577-b9c3-27103e6eb19c" disabled="true">
+    <con:settings/>
+    <con:config service="http://gateway.marvel.com" resourcePath="/v1/public/stories/{storyId}" methodName="getStoryIndividual" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="/v1/public/stories/{storyId} GET Request 1" id="3a3a1e6b-42f7-4022-809e-ae7ab00f2f73" mediaType="application/json">
+        <con:settings/>
+        <con:endpoint>http://gateway.marvel.com</con:endpoint>
+        <con:request/>
+        <con:originalUri>http://gateway.marvel.com/v1/public/stories/</con:originalUri>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="/v1/public/stories/{storyId}/characters GET Request 1" id="aa161824-dbae-4930-aab8-6a688ae42579" disabled="true">
+    <con:settings/>
+    <con:config service="http://gateway.marvel.com" resourcePath="/v1/public/stories/{storyId}/characters" methodName="getCreatorCollection" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="/v1/public/stories/{storyId}/characters GET Request 1" id="ffc3b244-9543-4ccb-ab4c-8f4e079b5189" mediaType="application/json">
+        <con:settings/>
+        <con:endpoint>http://gateway.marvel.com</con:endpoint>
+        <con:request/>
+        <con:originalUri>http://gateway.marvel.com/v1/public/stories/characters</con:originalUri>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="/v1/public/stories/{storyId}/comics GET Request 1" id="a9dfe263-dcc9-48b6-a908-e8b122aec719" disabled="true">
+    <con:settings/>
+    <con:config service="http://gateway.marvel.com" resourcePath="/v1/public/stories/{storyId}/comics" methodName="getComicsCollection" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="/v1/public/stories/{storyId}/comics GET Request 1" id="cda68cac-bdbd-41e7-9ccc-ebf00233d72e" mediaType="application/json">
+        <con:settings/>
+        <con:endpoint>http://gateway.marvel.com</con:endpoint>
+        <con:request/>
+        <con:originalUri>http://gateway.marvel.com/v1/public/stories/comics</con:originalUri>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="/v1/public/stories/{storyId}/creators GET Request 1" id="108850c5-6b80-42f7-99bb-574aa0aeb4a5" disabled="true">
+    <con:settings/>
+    <con:config service="http://gateway.marvel.com" resourcePath="/v1/public/stories/{storyId}/creators" methodName="getCreatorCollection" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="/v1/public/stories/{storyId}/creators GET Request 1" id="711de72b-e61a-4b91-96b1-bbd1b0c1d86d" mediaType="application/json">
+        <con:settings/>
+        <con:endpoint>http://gateway.marvel.com</con:endpoint>
+        <con:request/>
+        <con:originalUri>http://gateway.marvel.com/v1/public/stories/creators</con:originalUri>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="/v1/public/stories/{storyId}/events GET Request 1" id="1c9c4d63-21f9-4f9b-bc11-a415489809f5" disabled="true">
+    <con:settings/>
+    <con:config service="http://gateway.marvel.com" resourcePath="/v1/public/stories/{storyId}/events" methodName="getEventsCollection" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="/v1/public/stories/{storyId}/events GET Request 1" id="aefa03d8-775f-4acc-b19f-229a99e725c9" mediaType="application/json">
+        <con:settings/>
+        <con:endpoint>http://gateway.marvel.com</con:endpoint>
+        <con:request/>
+        <con:originalUri>http://gateway.marvel.com/v1/public/stories/events</con:originalUri>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="/v1/public/stories/{storyId}/series GET Request 1" id="1a89ee91-046f-4870-9b58-aea0daeb798a" disabled="true">
+    <con:settings/>
+    <con:config service="http://gateway.marvel.com" resourcePath="/v1/public/stories/{storyId}/series" methodName="getStorySeriesCollection" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="/v1/public/stories/{storyId}/series GET Request 1" id="d9947219-26f8-4843-ad88-02dc077e0646" mediaType="application/json">
+        <con:settings/>
+        <con:endpoint>http://gateway.marvel.com</con:endpoint>
+        <con:request/>
+        <con:originalUri>http://gateway.marvel.com/v1/public/stories/series</con:originalUri>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties>
+    <con:property>
+      <con:name>browse_URL</con:name>
+      <con:value>http://marvel.com/comics/characters/1017100/a-bomb_has?utm_campaign=apiRef&amp;utm_source=d88917dfdd9795e7da0217f20a1f3367</con:value>
+    </con:property>
+    <con:property>
+      <con:name>XMLfileLocation</con:name>
+      <con:value>C:/Users/NikitaChhattani/Desktop/Furloughproject/Marvel/MarvelCollections.xml</con:value>
+    </con:property>
+  </con:properties>
+  <con:reportParameters/>
+  <con:breakPoints>
+    <con:testStepId>4fb67d0a-e190-4990-a7d6-3af41b3ffaaf</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>451026fc-ca5f-46ed-8a92-23915dd17744</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>46884311-35a6-4fdb-9b13-21eea6d54749</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>b63fdec7-9ca9-482d-8519-88079931b093</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>ed0b5288-6f9d-4543-b548-0840e102534d</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>3a2ddabd-eea0-47b6-94c6-99299065de03</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>4a90cd82-4146-4cba-a377-78974a1a45b0</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>eef9b036-1482-45a2-9253-fa4fb8fd794c</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>52b267d6-8ffb-4584-be33-782c127da26c</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>a3bebef6-c3c3-4236-8cb2-f94267fc88c4</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>04134e60-cab8-4cda-bb87-b63b4a719e15</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>0f541446-61cb-4dd2-b818-542f852ff310</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>abb2229c-9fb7-4714-a64e-58071ab2e6f4</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>55cc007d-a853-40fc-8263-38dcef27eccf</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>a0d5bee7-586b-4b86-9157-def878948f82</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>15bcdf2b-d382-46ff-bda4-ecab27b1d972</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>cae7878b-7971-42ec-b9ff-ba0ef10dd9e2</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>9526a426-63c2-44ae-a3db-f15cd8d62c16</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>48f8bedd-dde9-412b-85fd-6ba3849c45f6</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>1a49a849-e48f-47ef-b138-5d3eed092d92</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>5820f531-ac02-4d86-adf2-8f358a4c504b</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+</con:testCase>

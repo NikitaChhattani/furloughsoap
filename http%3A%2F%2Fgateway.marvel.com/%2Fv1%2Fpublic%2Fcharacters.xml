@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="/v1/public/characters" path="/v1/public/characters" id="0d35af16-6d72-4583-b92c-b4c8d2d0ceae" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="0d35af16-6d72-4583-b92c-b4c8d2d0ceaefileName">%2Fv1%2Fpublic%2Fcharacters</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="getCreatorCollection" id="a89aac21-e2ba-44db-9478-f5072cb0d18c" method="GET">
+    <con:description>Fetches lists of characters.</con:description>
+    <con:settings/>
+    <con:parameters>
+      <con:parameter>
+        <con:name>name</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>Return only characters matching the specified full character name (e.g. Spider-Man).</con:description>
+      </con:parameter>
+      <con:parameter>
+        <con:name>nameStartsWith</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>Return characters with names that begin with the specified string (e.g. Sp).</con:description>
+      </con:parameter>
+      <con:parameter>
+        <con:name>modifiedSince</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>Return only characters which have been modified since the specified date.</con:description>
+      </con:parameter>
+      <con:parameter>
+        <con:name>comics</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>Return only characters which appear in the specified comics (accepts a comma-separated list of ids).</con:description>
+      </con:parameter>
+      <con:parameter>
+        <con:name>series</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>Return only characters which appear the specified series (accepts a comma-separated list of ids).</con:description>
+      </con:parameter>
+      <con:parameter>
+        <con:name>events</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>Return only characters which appear in the specified events (accepts a comma-separated list of ids).</con:description>
+      </con:parameter>
+      <con:parameter>
+        <con:name>stories</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>Return only characters which appear the specified stories (accepts a comma-separated list of ids).</con:description>
+      </con:parameter>
+      <con:parameter>
+        <con:name>orderBy</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed.</con:description>
+      </con:parameter>
+      <con:parameter>
+        <con:name>limit</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>Limit the result set to the specified number of resources.</con:description>
+      </con:parameter>
+      <con:parameter>
+        <con:name>offset</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>Skip the specified number of resources in the result set.</con:description>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>ts</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>hash</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>apikey</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>409</con:status>
+      <con:params/>
+      <con:sampleContent>Limit greater than 100.</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>409</con:status>
+      <con:params/>
+      <con:sampleContent>Limit invalid or below 1.</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>409</con:status>
+      <con:params/>
+      <con:sampleContent>Invalid or unrecognized parameter.</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>409</con:status>
+      <con:params/>
+      <con:sampleContent>Empty parameter.</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>409</con:status>
+      <con:params/>
+      <con:sampleContent>Invalid or unrecognized ordering parameter.</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>409</con:status>
+      <con:params/>
+      <con:sampleContent>Too many values sent to a multi-value list filter.</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>409</con:status>
+      <con:params/>
+      <con:sampleContent>Invalid value passed to filter.</con:sampleContent>
+    </con:representation>
+    <con:representation type="FAULT">
+      <con:mediaType>application/json; charset=utf-8</con:mediaType>
+      <con:status>409 401</con:status>
+      <con:params/>
+      <con:element xmlns:char="http://gateway.marvel.com/v1/public/characters">char:Fault</con:element>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json; charset=utf-8</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:element xmlns:char="http://gateway.marvel.com/v1/public/characters">char:Response</con:element>
+    </con:representation>
+    <con:request name="Request 1" id="d26cacb6-69cd-4fd4-baa4-40dcb6f31468" mediaType="application/json">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:endpoint>http://gateway.marvel.com</con:endpoint>
+      <con:request/>
+      <con:originalUri>http://gateway.marvel.com/v1/public/characters</con:originalUri>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters>
+        <con:entry key="apikey" value="d88917dfdd9795e7da0217f20a1f3367"/>
+        <con:entry key="hash" value="5b10f1ece124863d880570c882220712"/>
+        <con:entry key="ts" value="1578815733"/>
+      </con:parameters>
+      <con:parameterOrder>
+        <con:entry>name</con:entry>
+        <con:entry>nameStartsWith</con:entry>
+        <con:entry>modifiedSince</con:entry>
+        <con:entry>comics</con:entry>
+        <con:entry>series</con:entry>
+        <con:entry>events</con:entry>
+        <con:entry>stories</con:entry>
+        <con:entry>orderBy</con:entry>
+        <con:entry>limit</con:entry>
+        <con:entry>offset</con:entry>
+        <con:entry>ts</con:entry>
+        <con:entry>hash</con:entry>
+        <con:entry>apikey</con:entry>
+      </con:parameterOrder>
+    </con:request>
+    <con:request name="Copy of Request 1" id="d26cacb6-69cd-4fd4-baa4-40dcb6f31468" mediaType="application/json">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:endpoint>http://gateway.marvel.com</con:endpoint>
+      <con:request/>
+      <con:originalUri>http://gateway.marvel.com/v1/public/characters</con:originalUri>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters>
+        <con:entry key="apikey" value="d88917dfdd9795e7da0217f20a1f3367"/>
+        <con:entry key="hash" value="5b10f1ece124863d880570c882220712"/>
+        <con:entry key="ts" value="1578815733"/>
+      </con:parameters>
+      <con:parameterOrder>
+        <con:entry>name</con:entry>
+        <con:entry>nameStartsWith</con:entry>
+        <con:entry>modifiedSince</con:entry>
+        <con:entry>comics</con:entry>
+        <con:entry>series</con:entry>
+        <con:entry>events</con:entry>
+        <con:entry>stories</con:entry>
+        <con:entry>orderBy</con:entry>
+        <con:entry>limit</con:entry>
+        <con:entry>offset</con:entry>
+        <con:entry>ts</con:entry>
+        <con:entry>hash</con:entry>
+        <con:entry>apikey</con:entry>
+      </con:parameterOrder>
+    </con:request>
+  </con:method>
+</con:resource>
