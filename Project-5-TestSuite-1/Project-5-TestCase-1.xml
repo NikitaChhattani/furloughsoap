@@ -58,6 +58,11 @@
             <codes>200</codes>
           </con:configuration>
         </con:assertion>
+        <con:assertion type="Invalid HTTP Status Codes" id="8544ed46-d92f-4c45-9119-45a4c1f7ff4e" name="Invalid HTTP Status Codes">
+          <con:configuration>
+            <codes>500</codes>
+          </con:configuration>
+        </con:assertion>
         <con:credentials>
           <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
           <con:authType>No Authorization</con:authType>
@@ -321,7 +326,7 @@ log.info final_url
   <con:testStep type="delay" name="Delay 7" id="5820f531-ac02-4d86-adf2-8f358a4c504b">
     <con:settings/>
     <con:config>
-      <delay>1000</delay>
+      <delay>10000</delay>
     </con:config>
   </con:testStep>
   <con:testStep type="restrequest" name="/v1/public/characters/{characterId} GET Request 1" id="15bcdf2b-d382-46ff-bda4-ecab27b1d972" disabled="true">
